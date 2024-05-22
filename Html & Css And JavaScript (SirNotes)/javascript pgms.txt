@@ -1,0 +1,369 @@
+1
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>JS1</title>
+ </head>
+ <body>
+		<h3>demo on inline script</h3>
+		<button onclick="alert('Door Opened')">Push</button>
+		<button onclick="alert('Door Closed')">Pull</button>
+		<h1 ondblclick="alert('Hey, Why you clicked on me')">Click here</h1>
+ </body>
+</html>
+
+o/p:
+
+demo on inline script
+
+Push   Pull
+
+Click here
+----------------------------------------------------------------------------------------------
+2
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>JS2</title>
+	<script type="text/javascript">
+		document.write("msg from head");
+	</script>
+ </head>
+ <body>
+		<h3>demo on internal script</h3>
+		<script>
+			document.write("msg from body");
+		</script>
+ </body>
+</html>
+
+o/p:
+msg from head
+demo on internal script
+msg from body
+----------------------------------------------------------------
+3
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Js3</title>
+	<script src="myscript.js"></script>  <!-- linking -->
+ </head>
+ <body>
+	<h3>demo on external script</h3>
+	<script>
+		fun1();
+	</script>
+	<button onclick="fun2()">call fun</button>
+ </body>
+</html>
+
+
+
+myscript.js
+
+/* creating external script */
+function fun1()
+{
+	document.write("hi, i am fun1<br>");
+}
+
+function fun2()
+{
+	document.write("hi, i am fun2<br>");
+}
+
+/* save this file with a name "myscript.js" in current location */
+
+----------------------------------------------------
+4
+
+<!--
+		write() => this method used to print data/html tags on web page w/o line break
+			Syn:	document.write(data/expr, data/expr, data/expr)
+						document.write(data/expr + data/expr + data/expr)
+
+		writeln() => this method used to print data/html tags on web page with line break
+			Syn:	document.writeln(data/expr, data/expr, data/expr)
+						document.writeln(data/expr + data/expr + data/expr)
+
+		log() => this method used to print data on browser's console (press F12 key)
+			Syn:	console.log(data/expr)
+
+Note:	document & console predefined objects
+-->
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Js4</title>
+ </head>
+ <body>
+	<h3>demo on printing methods</h3>
+	<script>
+		document.write("Hello");
+		document.write('apple','mango','orange');
+		document.writeln("Welcome");
+		console.log("invalid data");
+	</script>
+ </body>
+</html>
+
+o/p:
+
+demo on printing methods
+HelloapplemangoorangeWelcome
+
+-----------------------------------------------------
+5
+
+<!-- example on JS 
+Note:
+1.	 ; is optional 
+2.  literals => used to represent string/text data
+		=> string literals
+				-> " " & '  ' both are called string literals
+				-> old 
+				-> there is no diff bw/  " " & '  ' 
+				-> string lit sup to type only 1 line
+
+		=> template literals
+				-> ` ` (backtick) is called tempalte lit
+				-> since JS6
+				-> temp lit sup to type no.of lines
+3. JS produces errors, it displaying errors in console 
+4. if error occures, it skips execution code from error line to end of </script> tag
+-->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Js5</title>
+ </head>
+ <body>
+	<h3>Note points</h3>
+	<script>
+		document.write("HTML")
+		document.write('CSS')  
+		document.writ(`JavaScript`)   //error
+	</script>
+	<h3>Hello</h3>
+	<script>
+		document.write("Servlet");
+		document.write('ASP.net')
+		document.rite(`PHP`)	//error
+		document.write(`Node.JS`);
+	</script>
+	<h3>hi</h3>
+	<script>
+		/*
+		console.log("Nuziveedu
+Big
+Rasalu")	error	*/
+		console.log(`Nuziveedu
+Big
+Rasalu`)	
+	</script>
+	<h3>end of page</h3>
+ </body>
+</html>
+
+o/p:
+Note points
+HTMLCSS
+Hello
+ServletASP.net
+hi
+end of page
+
+----------------------------------------------------------------
+6
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Js6</title>
+ </head>
+ <body>
+	<h3>demo on variable declarations</h3>
+	<script>
+		var a;	//var declaration
+		var b=100;	//var init
+		document.write(a+"<br>")
+		document.write(b, "<br>")
+
+		let c;	//var dec
+		let d=200;	//var init
+		document.write(c+"<br>")
+		document.write(d, "<br>")
+	</script>
+ </body>
+</html>
+
+o/p:
+demo on variable declarations
+undefined
+100
+undefined
+200
+
+---------------------------------------------------------------------------------------
+7
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Js6</title>
+ </head>
+ <body>
+	<h3>demo on variable declarations</h3>
+	<script>
+		var a=100;	//var inti
+		let b=200;	//var init
+		document.write(a+"<br>")
+		document.write(b, "<br>")
+		a=111;	//update
+		b=222;
+		document.write(a+"<br>")
+		document.write(b, "<br>")
+
+		const PI=3.14;	//init
+		document.write(PI, "<br>")
+		//PI=1.6;	error
+		//const E;	error
+	</script>
+ </body>
+</html>
+
+o/p:
+
+demo on variable declarations
+100
+200
+111
+222
+3.14
+
+-----------------------------------------------------------------------------
+8
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Js6</title>
+ </head>
+ <body>
+	<h3>demo on variable declarations</h3>
+	<script>
+//We can use a variable directly without declaring it in javascript, it’s called dynamic programming.
+		a=100;
+		b="rama"
+		document.write( a+" &nbsp; "+ b);
+/*		window => imp/predefine
+			a &b vars are declared with in window object
+			window.a*/
+			window.b	
+			window.console.log("hello");
+			window.document.write("hi")
+			//window is an optional object 
+
+	//Java script did not provide any data types for declaring variables and a variable in javascript can store any type of value. Hence java script is loosely typed programme. 
+			let x;
+			x="apple";	//or			x=10		or	x=20.56		or	x=true	
+			document.write(x);
+	</script>
+ </body>
+</html>
+
+o/p:
+demo on variable declarations
+100   ramahiapple
+
+----------------------------------------------------------------------------------------------
+9
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Js9</title>
+ </head>
+ <body>
+	<h3>demo on primitive datatypes</h3>
+	<script>
+		//number n=10;
+		let a=10;
+		let b=20.66;
+		var c='N';
+		var d="rama"
+		var e=true;
+		let f;
+		document.write(a+" => "+typeof a+"<br>");
+		document.write(b+" => "+typeof b+"<br>");
+		document.write(c+" => "+typeof c+"<br>");
+		document.write(d+" => "+typeof d+"<br>");
+		document.write(e+" => "+typeof e+"<br>");
+		document.write(f+" => "+typeof f+"<br>");
+
+	</script>
+ </body>
+</html>
+
+o/p:
+
+demo on primitive datatypes
+10 => number
+20.66 => number
+N => string
+rama => string
+true => boolean
+undefined => undefined
+
+----------------------------------------------------------------------------------
+10
+<!-- example on JS -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Js9</title>
+ </head>
+ <body>
+	<h3>demo on non-primitive datatypes</h3>
+	<script>
+		//objects creation and init with default values
+			let st1 = new String()	//blank
+			let n1 = new Number();	//0
+			let b1 = new Boolean();	//false
+			var d1 = new Date();		//system date & time
+			var a1 = [];		//0		nothing
+		    document.write("st1	:"+st1+"<br>");
+		    document.write("n1	:"+n1+"<br>");
+		    document.write("b1	:"+b1+"<br>");
+		    document.write("Date	:"+d1+"<br>");
+		    document.write("Array	:"+a1+"<br>");
+
+		//objects creation and init with given values
+			let st2 = new String("Siva KUmar")	
+			let n2 = new Number(123);	
+			let b2 = new Boolean(true);		
+			var d2 = new Date("31-dec-2022");		
+			var a2 = [10,20,30,40,50];
+		    document.write("st2	:"+st2+"<br>");
+		    document.write("n2	:"+n2+"<br>");
+		    document.write("b2	:"+b2+"<br>");
+		    document.write("Date	:"+d2+"<br>");
+		    document.write("Array	:"+a2+"<br>");
+	</script>
+ </body>
+</html>
